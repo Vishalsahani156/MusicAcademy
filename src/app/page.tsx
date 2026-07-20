@@ -1,5 +1,8 @@
 export default function Home() {
   return (
-    <h1 className="text-2xl text-center">Welcome to Next.js!</h1>
+    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-wjite/[0.02]">
+
+      <h1 className="text-2xl text-center">Welcome to Next.js!</h1>
+    </main>
   );
 }
