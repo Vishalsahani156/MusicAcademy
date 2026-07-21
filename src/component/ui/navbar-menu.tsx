@@ -1,73 +1,78 @@
 "use client";
 
 import Link from "next/link";
-import { Menu } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Courses", href: "/courses" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ];
-
+export const HoveredLink = ({ children, ...rest }: React.ComponentProps<typeof Link>) => {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        <Link
-          href="/"
-          className="text-xl font-bold tracking-tight"
-        >
-          MusicAcademy
-        </Link>
+    <Link {...rest} className="text-neutral-700 dark:text-neutral-200 hover:text-black">
+      {children}
+    </Link>
+  );
+};
 
-        {/* Desktop Menu */}
-        <div className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium transition-colors hover:text-blue-600"
-            >
-              {link.name}
-            </Link>
-          ))}
+export const MenuItem = ({
+  setActive,
+  active,
+  item,
+  children,
+}: {
+  setActive: (item: string | null) => void;
+  active: string | null;
+  item: string;
+  children?: React.ReactNode;
+}) => {
+  return (
+    <div onMouseEnter={() => setActive(item)} className="relative">
+      <p className="cursor-pointer text-black hover:opacity-90 dark:text-white">
+        {item}
+      </p>
+      {active === item && (
+        <div className="absolute left-1/2 top-full -translate-x-1/2 pt-4">
+          <div className="rounded-xl border bg-white p-4 shadow-xl dark:border-neutral-800 dark:bg-black">
+            {children}
+          </div>
         </div>
+      )}
+    </div>
+  );
+};
 
-        {/* Mobile Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden"
-          aria-label="Toggle Menu"
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-300 md:hidden",
-          isOpen ? "max-h-64 border-t" : "max-h-0"
-        )}
-      >
-        <div className="flex flex-col p-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="py-3 text-sm font-medium hover:text-blue-600"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      </div>
+export const Menu = ({
+  setActive,
+  children,
+}: {
+  setActive: (item: string | null) => void;
+  children: React.ReactNode;
+}) => {
+  return (
+    <nav
+      onMouseLeave={() => setActive(null)}
+      className="relative flex items-center gap-4 rounded-full border bg-white px-8 py-3 shadow-input dark:border-white/[0.2] dark:bg-black"
+    >
+      {children}
     </nav>
   );
-}
+};
+
+export const ProductItem = ({
+  title,
+  description,
+  href,
+  src,
+}: {
+  title: string;
+  description: string;
+  href: string;
+  src: string;
+}) => {
+  return (
+    <Link href={href} className="flex gap-4">
+      <div>
+        <h4 className="text-base font-bold">{title}</h4>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">{description}</p>
+      </div>
+    </Link>
+  );
+};
