@@ -1,0 +1,25 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "role": "Guitar Student",
+      "content": "This academy transformed my playing. The instructors are world-class and the curriculum is incredibly well-structured.",
+      "avatar": "/avatars/alice.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mark Rivera",
+      "role": "Piano Student",
+      "content": "I went from absolute beginner to playing my favorite pieces in just three months. Highly recommend!",
+      "avatar": "/avatars/mark.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sophia Chen",
+      "role": "Vocal Student",
+      "content": "The vocal training program helped me discover my true range. I feel so much more confident performing now.",
+      "avatar": "/avatars/sophia.jpg"
+    }
+  ]
+}
