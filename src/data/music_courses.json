@@ -1,0 +1,52 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Guitar Fundamentals",
+      "slug": "guitar-fundamentals",
+      "description": "Master the basics of acoustic and electric guitar, from chords and strumming to your first full songs.",
+      "isFeatured": true,
+      "price": 49
+    },
+    {
+      "id": 2,
+      "title": "Piano for Beginners",
+      "slug": "piano-for-beginners",
+      "description": "Learn to read music and play the piano with confidence through structured, hands-on lessons.",
+      "isFeatured": true,
+      "price": 59
+    },
+    {
+      "id": 3,
+      "title": "Vocal Training Essentials",
+      "slug": "vocal-training-essentials",
+      "description": "Develop breath control, pitch, and tone to unlock the full range of your singing voice.",
+      "isFeatured": true,
+      "price": 45
+    },
+    {
+      "id": 4,
+      "title": "Music Theory 101",
+      "slug": "music-theory-101",
+      "description": "Understand scales, intervals, and harmony to become a well-rounded and versatile musician.",
+      "isFeatured": false,
+      "price": 39
+    },
+    {
+      "id": 5,
+      "title": "Drumming Basics",
+      "slug": "drumming-basics",
+      "description": "Build rhythm and coordination with foundational drum patterns and grooves for any genre.",
+      "isFeatured": false,
+      "price": 55
+    },
+    {
+      "id": 6,
+      "title": "Music Production with a DAW",
+      "slug": "music-production-daw",
+      "description": "Record, mix, and produce your own tracks using modern digital audio workstation techniques.",
+      "isFeatured": true,
+      "price": 79
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 'use client'
-import Link from "next/dist/client/link";
+import Link from "next/link";
 import courseData from "../data/music_courses.json"
 
 import React from 'react';
@@ -18,9 +18,9 @@ function FeatureCourses() {
         <div className="py-12 bg-gray-900">
             <div className='text-center'>
                 <h2 className='text-base text-teal-600 font-semibold tracking-wide uppercase'>Featured Courses</h2>
-                <p className='text-gray-400 mt-2 text-white sm:text-4xl'>Learn with the best way</p>
+                <p className='mt-2 text-3xl font-extrabold text-white sm:text-4xl'>Learn with the best way</p>
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-8 px-4 sm:grid-cols-2 lg:grid-cols-3">
                 {featuredCourses.map((course: Course) => (
                     <div key={course.id} className="bg-gray-800 p-6 rounded-lg shadow-lg">
                         <h3 className="text-xl font-bold text-white">{course.title}</h3>
@@ -40,4 +40,4 @@ function FeatureCourses() {
     );
 }
 
-export default FeatureCourses;  
+export default FeatureCourses;
