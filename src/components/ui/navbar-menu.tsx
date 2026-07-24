@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
 
 export const HoveredLink = ({ children, ...rest }: React.ComponentProps<typeof Link>) => {
   return (
@@ -60,12 +58,10 @@ export const ProductItem = ({
   title,
   description,
   href,
-  src,
 }: {
   title: string;
   description: string;
   href: string;
-  src: string;
 }) => {
   return (
     <Link href={href} className="flex gap-4">
